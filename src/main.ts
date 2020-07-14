@@ -9,6 +9,8 @@ import remarkTitle from "remark-title";
 import remarkValidateLinks from "remark-validate-links";
 import remarkWikiLink from "remark-wiki-link";
 
+import remarkStargazers from "./plugins/stargazers";
+
 export async function main(): Promise<void> {
 	const filePath = path.join(__dirname, "../../readme.md");
 	const folderPath = path.dirname(filePath);
@@ -28,6 +30,7 @@ export async function main(): Promise<void> {
 			title: folderPath,
 		})
 		.use(remarkValidateLinks, {})
+		.use(remarkStargazers)
 		// .use(remarkWikiLink, {})
 		// .use(remarkUsage, {})
 		.process(file, (err, output) => {

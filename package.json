@@ -4,7 +4,8 @@
 	"description": "",
 	"main": "",
 	"scripts": {
-		"start": "echo \"Error: no test specified\" && exit 1"
+		"start": "echo \"Error: no test specified\" && exit 1",
+		"test": "jest"
 	},
 	"bin": {
 		"globe-markdown": "./bin/markdown.js"
@@ -20,7 +21,12 @@
 		"remark-usage": "^8.0.0",
 		"remark-validate-links": "^10.0.2",
 		"remark-wiki-link": "^0.0.4",
-		"to-vfile": "^6.1.0",
+		"to-vfile": "^6.1.0"
+	},
+	"devDependencies": {
+		"@types/jest": "^26.0.4",
+		"jest": "^26.1.0",
+		"ts-jest": "^26.1.2",
 		"ts-node": "^8.10.2",
 		"typescript": "^3.9.6"
 	}
