@@ -22,6 +22,7 @@ export function doRemark(
 	return result.process(input);
 }
 
+// TODO: table of contents is not showing up
 const plugins = [
 	{
 		fn: remarkTitle,
