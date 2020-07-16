@@ -1,10 +1,10 @@
 {
-	"name": "format-readme",
-	"version": "1.0.0",
+	"name": "globe-sync-readme",
+	"version": "0.1.0",
 	"description": "",
-	"main": "",
+	"main": "build",
 	"scripts": {
-		"start": "echo \"Error: no test specified\" && exit 1",
+		"build": "tsc",
 		"test": "jest"
 	},
 	"bin": {
@@ -13,18 +13,16 @@
 	"keywords": [],
 	"author": "Edwin Kofler",
 	"dependencies": {
-		"@types/node": "^14.0.20",
+		"@fox-land/remark-license": "^0.3.1",
 		"remark": "^12.0.0",
-		"remark-license": "^5.1.1",
-		"remark-title": "^1.0.4",
+		"remark-starchart": "^0.1.2",
 		"remark-toc": "^7.0.0",
-		"remark-usage": "^8.0.0",
-		"remark-validate-links": "^10.0.2",
-		"remark-wiki-link": "^0.0.4",
 		"to-vfile": "^6.1.0"
 	},
 	"devDependencies": {
+		"@fox-land/remark-title": "^2.0.1",
 		"@types/jest": "^26.0.4",
+		"@types/node": "^14.0.23",
 		"jest": "^26.1.0",
 		"ts-jest": "^26.1.2",
 		"ts-node": "^8.10.2",

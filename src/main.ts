@@ -1,22 +1,16 @@
 import fs from "fs";
 import path from "path";
-import toVfile from "to-vfile";
 import remark from "remark";
-import remarkLicense from "remark-license";
 import remarkTableOfContents from "remark-toc";
-import remarkUsage from "remark-usage";
-import remarkTitle from "remark-title";
-import remarkValidateLinks from "remark-validate-links";
-import remarkWikiLink from "remark-wiki-link";
+// import remarkStarchart from "remark-starchart";
+import remarkLicense from "@fox-land/remark-license";
+import remarkTitle from "@fox-land/remark-title";
 
-import remarkStargazers from "./plugins/stargazers";
-
-export async function main(): Promise<void> {
-	const filePath = path.join(__dirname, "../../readme.md");
-	const folderPath = path.dirname(filePath);
-	const file = await fs.promises.readFile(filePath, { encoding: "utf8" });
+export async function main(readmePath: string): Promise<void> {
+	const readmeFile = await fs.promises.readFile(readmePath, {
+		encoding: "utf8",
+	});
 	remark()
-		// @ts-ignore
 		.use(remarkTableOfContents, {
 			maxDepth: 3,
 			tight: true,
@@ -26,16 +20,13 @@ export async function main(): Promise<void> {
 			license: "Apache-2.0",
 			url: "https://edwinkofler.com",
 		})
-		.use(remarkTitle, {
-			title: folderPath,
+		.use(remarkTitle, { title: path.dirname(readmePath) })
+		// .use(remarkStargazers)
+		.process(readmeFile)
+		.then((vfile) => {
+			console.info(vfile);
 		})
-		.use(remarkValidateLinks, {})
-		.use(remarkStargazers)
-		// .use(remarkWikiLink, {})
-		// .use(remarkUsage, {})
-		.process(file, (err, output) => {
-			if (err) console.error(err);
-
-			console.info(output);
+		.catch((err) => {
+			console.error(err);
 		});
 }
