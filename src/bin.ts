@@ -1,4 +1,4 @@
-import { main } from "./main.ts";
+import { main } from "./main";
 
 main("package.json").catch((err) => {
 	console.error(err);
