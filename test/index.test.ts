@@ -1,13 +1,13 @@
-import path from "path";
-import remark from "remark";
-import remarkTableOfContents from "remark-toc";
-import remarkStarchart from "remark-starchart";
-import remarkLicense from "@fox-land/remark-license";
-import remarkTitle from "@fox-land/remark-title";
+import path from 'path'
+import remark from 'remark'
+import remarkTableOfContents from 'remark-toc'
+import remarkStarchart from 'remark-starchart'
+import remarkLicense from '@fox-land/remark-license'
+import remarkTitle from '@fox-land/remark-title'
 
 interface Plugin {
-	fn: Function;
-	options: Record<string, any>;
+	fn: Function
+	options: Record<string, any>
 }
 export function doRemark(
 	input: string,
@@ -15,11 +15,11 @@ export function doRemark(
 	output: string
 ): Promise<any> {
 	// @ts-ignore
-	let result = remark();
+	let result = remark()
 	for (const plugin of plugins) {
-		result = result().use(plugin.fn, plugin.options);
+		result = result().use(plugin.fn, plugin.options)
 	}
-	return result.process(input);
+	return result.process(input)
 }
 
 // TODO: table of contents is not showing up
@@ -27,7 +27,7 @@ const plugins = [
 	{
 		fn: remarkTitle,
 		options: {
-			title: path.basename(path.resolve(__dirname, "..")),
+			title: path.basename(path.resolve(__dirname, '..')),
 		},
 	},
 	{
@@ -40,20 +40,20 @@ const plugins = [
 	{
 		fn: remarkStarchart,
 		options: {
-			owner: "eankeen",
-			repo: "sync-readme",
+			owner: 'eankeen',
+			repo: 'sync-readme',
 		},
 	},
 	{
 		fn: remarkLicense,
 		options: {
-			spdxId: "Apache-2.0",
+			spdxId: 'Apache-2.0',
 		},
 	},
-];
+]
 
-test("ensure it works normally", async () => {
-	const input = "# Main Title\n";
+test('ensure it works normally', async () => {
+	const input = '# Main Title\n'
 	const output = `# globe-sync-readme
 
 ## Star Chart
@@ -63,8 +63,8 @@ test("ensure it works normally", async () => {
 ## License
 
 Licensed under Apache-2.0
-`;
+`
 
-	const vfile = await doRemark(input, plugins, output);
-	expect(vfile.contents).toBe(output);
-});
+	const vfile = await doRemark(input, plugins, output)
+	expect(vfile.contents).toBe(output)
+})
