@@ -14,13 +14,12 @@
 	"author": "Edwin Kofler",
 	"dependencies": {
 		"@fox-land/remark-license": "^0.3.1",
+		"@fox-land/remark-title": "^2.0.1",
 		"remark": "^12.0.0",
 		"remark-starchart": "^0.1.2",
-		"remark-toc": "^7.0.0",
-		"to-vfile": "^6.1.0"
+		"remark-toc": "^7.0.0"
 	},
 	"devDependencies": {
-		"@fox-land/remark-title": "^2.0.1",
 		"@types/jest": "^26.0.4",
 		"@types/node": "^14.0.23",
 		"jest": "^26.1.0",

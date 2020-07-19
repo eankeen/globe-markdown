@@ -1,11 +1,10 @@
 dependencies:
   '@fox-land/remark-license': 0.3.1
+  '@fox-land/remark-title': 2.0.1
   remark: 12.0.0
   remark-starchart: 0.1.2
   remark-toc: 7.0.0
-  to-vfile: 6.1.0
 devDependencies:
-  '@fox-land/remark-title': 2.0.1
   '@types/jest': 26.0.4
   '@types/node': 14.0.23
   jest: 26.1.0
@@ -303,7 +302,7 @@ packages:
     resolution:
       integrity: sha512-n3woPKAt5h4G3PHxUMe1DxG1xZT9RRexWFgbw48McleB8F7kDGFrEeVSBJJ1ARXGJSW8WZ4iZKQHcMmvY0kxKQ==
   /@fox-land/remark-title/2.0.1:
-    dev: true
+    dev: false
     resolution:
       integrity: sha512-puMzQKukNR0WhdeZVQMVwQ1uoIgSZDRpfnn/YFyDO1lmAtwVPBRdaDa67R9zhDbMBGtiw1rMajysZPJ+u0+QcA==
   /@istanbuljs/load-nyc-config/1.1.0:
@@ -3763,13 +3762,6 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-FWtleNAtZ/Ki2qtqej2CXTOayOH9bHDQF+Q48VpWyDXjbYxA4Yz8iDB31zXOBUlOHHKidDbqGVrTUvQMPmBGBw==
-  /to-vfile/6.1.0:
-    dependencies:
-      is-buffer: 2.0.4
-      vfile: 4.1.1
-    dev: false
-    resolution:
-      integrity: sha512-BxX8EkCxOAZe+D/ToHdDsJcVI4HqQfmw0tCkp31zf3dNP/XWIAjU4CmeuSwsSoOzOTqHPOL0KUzyZqJplkD0Qw==
   /tough-cookie/2.5.0:
     dependencies:
       psl: 1.8.0
@@ -4223,7 +4215,6 @@ specifiers:
   remark: ^12.0.0
   remark-starchart: ^0.1.2
   remark-toc: ^7.0.0
-  to-vfile: ^6.1.0
   ts-jest: ^26.1.2
   ts-node: ^8.10.2
   typescript: ^3.9.6

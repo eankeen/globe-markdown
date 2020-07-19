@@ -14,9 +14,7 @@ export async function main(readmePath: string): Promise<void> {
 	remark()
 		.use(remarkTitle, { title: path.dirname(readmePath) })
 		.use(remarkLicense, {
-			name: "Edwin Kofler",
-			license: "Apache-2.0",
-			url: "https://edwinkofler.com",
+			spdxId: "Apache-2.0",
 		})
 		.process(readmeFile)
 		.then((vfile) => {

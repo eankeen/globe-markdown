@@ -54,7 +54,7 @@ const plugins = [
 
 test("ensure it works normally", async () => {
 	const input = "# Main Title\n";
-	const output = `# sync-readme
+	const output = `# globe-sync-readme
 
 ## Star Chart
 
