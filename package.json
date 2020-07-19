@@ -7,9 +7,12 @@
 		"build": "tsc",
 		"test": "jest"
 	},
-	"files": [],
+	"files": [
+		"build",
+		"bin"
+	],
 	"bin": {
-		"globe-markdown": "./bin/markdown.js"
+		"globe-sync-readme": "./bin/globe-sync-readme.js"
 	},
 	"keywords": [],
 	"author": "Edwin Kofler",
