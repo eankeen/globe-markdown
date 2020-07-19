@@ -11,19 +11,17 @@ const remark_1 = __importDefault(require("remark"));
 const remark_license_1 = __importDefault(require("@fox-land/remark-license"));
 const remark_title_1 = __importDefault(require("@fox-land/remark-title"));
 async function main(readmePath) {
-    const readmeFile = await fs_1.default.promises.readFile(readmePath, {
-        encoding: "utf8",
-    });
-    remark_1.default()
-        .use(remark_title_1.default, { title: path_1.default.dirname(readmePath) })
-        .use(remark_license_1.default, {
-        spdxId: "Apache-2.0",
-    })
-        .process(readmeFile)
-        .then((vfile) => {
+    let readmeFile;
+    try {
+        readmeFile = await fs_1.default.promises.readFile(readmePath, { encoding: "utf8" });
+    }
+    catch (err) {
+        console.error(`Could not read readme file '${readmeFile}`);
+        console.error(err);
+    }
+    remark_1.default().use(remark_title_1.default, { title: path_1.default.dirname(readmePath) }).use(remark_license_1.default, { spdxId: "Apache-2.0" }).process(readmeFile).then((vfile) => {
         console.info(vfile);
-    })
-        .catch((err) => {
+    }).catch((err) => {
         console.error(err);
     });
 }
