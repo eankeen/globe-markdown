@@ -1,5 +1,6 @@
-import { main } from "./main";
+import {main} from "./main";
 
-main("package.json").catch((err) => {
-	console.error(err);
+const readmeFile = process.argv[1] || "README.md";
+main(readmeFile).catch((err) => {
+  console.error(err);
 });
