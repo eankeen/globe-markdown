@@ -1,6 +1,6 @@
-import {main} from "./main";
+import { main } from "./main";
 
-const readmeFile = process.argv[1] || "README.md";
+const readmeFile = process.argv[2] || "README.md";
 main(readmeFile).catch((err) => {
-  console.error(err);
+	console.error(err);
 });
