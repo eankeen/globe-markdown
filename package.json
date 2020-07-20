@@ -1,10 +1,11 @@
 {
-	"name": "globe-sync-readme",
-	"version": "0.1.6",
+	"name": "@fox-land/remark-readme",
+	"version": "0.2.0",
 	"description": "",
 	"main": "build",
 	"scripts": {
 		"build": "tsc",
+		"prepublishOnly": "npm run build",
 		"test": "jest"
 	},
 	"files": [
